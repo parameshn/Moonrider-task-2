@@ -5,7 +5,6 @@
 Containerized Spring Boot microservice with multiple API versions deployed on Kubernetes with CI/CD automation.
 
 ## Quick Start
-
 ### Prerequisites
 - Docker
 - Kubernetes/Minikube
@@ -14,8 +13,8 @@ Containerized Spring Boot microservice with multiple API versions deployed on Ku
 
 ### Local Setup
 ```bash
-git clone <repo-url>
-cd product-catalog
+git clone https://github.com/parameshn/Cloud-Native-Microservice.git
+cd Cloud-Native-Microservice
 mvn spring-boot:run
 ```
 
@@ -23,7 +22,6 @@ mvn spring-boot:run
 ```bash
 # Build image
 docker build -t product-service:v2.0 .
-
 # Run container
 docker run -p 8080:8080 product-service:v2.0
 ```
@@ -33,16 +31,13 @@ docker run -p 8080:8080 product-service:v2.0
 # Start cluster
 minikube start
 minikube addons enable ingress
-
 # Deploy
 kubectl apply -f k8s/
-
 # Access service
 minikube tunnel
 ```
 
 ## API Documentation
-
 **[📮 Postman Collection](https://kxld-4969301.postman.co/workspace/kxld's-Workspace~638a0202-4881-45c9-8a40-544f0617cade/collection/44593529-f16647ba-509c-40e2-b951-85bf4ecf9089?action=share&creator=44593529)**
 
 ### Endpoints
@@ -75,7 +70,6 @@ minikube tunnel
 ```bash
 # Local testing
 curl http://localhost:8080/api/v1/health
-
 # Kubernetes testing
 curl http://product-service.local/v1/health
 ```
@@ -89,3 +83,13 @@ GitHub Actions pipeline automatically:
 Set required secrets:
 - `DOCKERHUB_USERNAME`
 - `DOCKERHUB_TOKEN`
+
+## Contributing
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
